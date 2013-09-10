@@ -50,6 +50,24 @@ describe("CSVKit.Reader", function() {
         expect(reader.rows.length).toEqual(2);
     });
 
+    it("should process header as column names", function() {
+        var reader = new CSVKit.Reader();
+        reader.parse('a,b,c\r1,2,3\r4,5,6');
+
+        expect(reader.column_names).toEqual(["a", "b", "c"]);
+        expect(reader.rows.length).toEqual(2);
+    });
+
+    it("should not process header as column names", function() {
+        var reader = new CSVKit.Reader({
+            columns_from_header: false                             
+        });
+        reader.parse('a,b,c\r1,2,3\r4,5,6');
+
+        expect(reader.column_names).toEqual([]);
+        expect(reader.rows.length).toEqual(3);
+    });
+
     it("should parse types test data", function() {
         var reader = new CSVKit.Reader();
         reader.parse(MOCK_CSV_DATA.types);
