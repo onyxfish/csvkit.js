@@ -14,7 +14,7 @@ describe("CSVKit.ObjectWriter", function() {
         expect(output).toEqual('a,b,c\noneword,two words,three words ?');
     });
 
-    it("should escape quotes", function() {
+    it("should quote things", function() {
         var writer = new CSVKit.ObjectWriter({
             column_names: ['a,', 'b\n', 'c ']
         });
