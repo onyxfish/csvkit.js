@@ -22,6 +22,5 @@ describe("CSVKit.Writer", function() {
 
         expect(output).toEqual('"a,","b\n",c \noneword,two words,three words ?');
     });
-
 });
 

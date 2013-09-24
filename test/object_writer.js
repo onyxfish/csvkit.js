@@ -25,5 +25,13 @@ describe("CSVKit.ObjectWriter", function() {
 
         expect(output).toEqual('"a,","b\n",c \noneword,two words,three words ?');
     });
+
+    it("should require column names", function() {
+        var create = function() {
+            var writer = new CSVKit.ObjectWriter({});
+        };
+
+        expect(create).toThrow();
+    });
 });
 
