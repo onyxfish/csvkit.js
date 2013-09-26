@@ -5,5 +5,5 @@ An experimental pure-Javascript CSV reader initially based on Pavel Kolesnikov's
 
 The goal of this project is produce a robust, performant and non-Regex-based CSV parser for Javascript that will alleviate the need to constantly transform spreadsheets into JSON for use on the web.
 
-**Don't use this code! It's not remotely production-ready!**
+**This code is in use in production at NPR, but you should evaulate the open issues before using it. It has not been thoroughly tested against all varieties of CSV.**
 
